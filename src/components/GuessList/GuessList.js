@@ -38,7 +38,11 @@ function GuessList({ guessList, answer }) {
   let checkedGuessList = guessList.map((guess) => {
     return checkGuess(guess.guess, answer);
   });
-  return <div className="guess-results">{drawGrid(checkedGuessList)}</div>;
+  return (
+    <>
+      <div className="guess-results">{drawGrid(checkedGuessList)}</div>
+    </>
+  );
 }
 
 export default GuessList;

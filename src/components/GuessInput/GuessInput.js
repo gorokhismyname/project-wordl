@@ -1,6 +1,6 @@
 import React from "react";
 
-function GuessInput({ value, setValue, guessList, setGuessList }) {
+function GuessInput({ value, setValue, guessList, setGuessList, isDisabled }) {
   function handleNewValue(guess) {
     const randKey = crypto.randomUUID();
     const newLocal = { key: randKey, guess: guess };
@@ -31,6 +31,7 @@ function GuessInput({ value, setValue, guessList, setGuessList }) {
           id="guess-input"
           value={value.guess}
           pattern="^.{5,5}$"
+          disabled={isDisabled}
           onChange={(event) => {
             const uppercasedValue = event.target.value.toUpperCase();
             handleNewValue(uppercasedValue);
